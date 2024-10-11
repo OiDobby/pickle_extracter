@@ -7,7 +7,7 @@ The "pkl_to_extxyz.py" file extracts data from the pickle file and saves it in e
 - force
 - stress
 
-The "sample_debug.py" file extracts 100 materials (100 dictionary) from each pickle file to confirm debugging code (pkl_to_extxyz_test.py).
+The "sample_debug.py" file extracts 100 materials (100 dictionary) from each pickle file to confirm debugging code (debug.py).
 The sample number and output file name are optional.
 
 ## Usage
