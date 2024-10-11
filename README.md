@@ -1,4 +1,4 @@
-# pickle_loader
+# pickle_extracter  
 Thiese are to handle [M3GNet](https://figshare.com/articles/dataset/MPF_2021_2_8/19470599) dataset files.
 
 The "pkl_to_extxyz.py" file extracts data from the pickle file and saves it in extxyz file format, with the following keys;
