@@ -10,4 +10,11 @@ The "pkl_to_extxyz.py" file extracts data from the pickle file and saves it in e
 The "sample_debug.py" file extracts 100 materials (100 dictionary) from each pickle file to confirm debugging code (pkl_to_extxyz_test.py).
 The sample number and output file name are optional.
 
-## dependency
+## Usage
+1. Install [pymatgen]([https://pytorch.org/get-started/locally/](https://pymatgen.org/installation.html)). This package is depended on
+    - Python>=3.8
+    - pymatgen==2023.8.10 (=!2024.8.9)
+```shell
+pip install pymatgen==2023.8.10
+```
+2. Strongly recommanded pymatgen version 2023.8.10, the "pkl_to_extxyz.py" file doesn't work at 2024.8.9 version of pymatgen.
