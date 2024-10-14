@@ -7,7 +7,11 @@ The "pkl_to_extxyz.py" file extracts data from the pickle file and saves it in e
 - force
 - stress
 
-The "sample_debug.py" file extracts 100 materials (100 dictionary) from each pickle file to confirm debugging code (debug.py).
+The M3GNet data uses the units eV, eV/A, and kBa to represent energy, force, and stress.  
+The `stress` in the M3GNet data is the raw output from VASP, indicating that there is negative stress according to the convention outlined in M3GNet's paper.  
+In our output file (extxyz format), the unit of `stress` is converted to GPa by multiplying by -0.1 (kBa to GPa and changing sign).  
+
+The "sample_debug.py" file extracts 100 materials (100 dictionary) from each pickle file to confirm debugging code (debug.py).  
 The sample number and output file name are optional.
 
 ## Usage
