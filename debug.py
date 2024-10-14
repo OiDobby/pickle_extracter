@@ -3,16 +3,16 @@ import numpy as np
 from pymatgen.core.structure import Structure
 
 input_file = 'sampled_data.p'
-output_file = 'output_file.extxyz'
+output_file = 'sample.extxyz'
 
 # Step 1: Pickle 데이터 로드
 with open(input_file, 'rb') as f:
     data = pickle.load(f)
 
 # extxyz 형식으로 저장하기
-with open('output.extxyz', 'w') as f:
+with open(output_file, 'w') as f:
     for material_id, structures in data.items():
-        print(f"extract data: {material_id}")
+        #print(f"extract data: {material_id}")
         structure_count = len(structures['structure'])  # 구조 개수
 
         for i in range(structure_count):
@@ -34,7 +34,7 @@ with open('output.extxyz', 'w') as f:
 
             # Write the lattice information
             # stress 리스트를 문자열로 변환
-            stress_flattened = [s for stress in stresses for s in stress]  # 스트레스를 flatten 처리
+            stress_flattened = [-0.1 * s for stress in stresses for s in stress]  # stress flatten and convert unit  # 스트레스를 flatten 처리 and unit convert (KBa to GPa)
             stress_str = " ".join(map(str, stress_flattened))  # 문자열로 변환
             f.write(f"{len(positions)}\n")
             f.write(f"Lattice=\"{lattice_str}\" Properties=species:S:1:pos:R:3:forces:R:3 stress=\"{stress_str}\" energy={energies} pbc=\"T T T\"\n")
