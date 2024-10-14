@@ -42,7 +42,7 @@ with open(output_file, 'w') as f:
 
             # Write the lattice information
             # stress list to strings
-            stress_flattened = [-0.1 * s for stress in stresses for s in stress]  # stress flatten and convert unit
+            stress_flattened = [-0.1 * s for stress in stresses for s in stress]  # stress flatten and convert unit (KBa to GPa)
             stress_str = " ".join(map(str, stress_flattened))  # to strings
             f.write(f"{len(positions)}\n")
             f.write(f"Lattice=\"{lattice_str}\" Properties=species:S:1:pos:R:3:forces:R:3 stress=\"{stress_str}\" energy={energies} pbc=\"T T T\"\n")
