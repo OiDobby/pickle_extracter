@@ -14,6 +14,8 @@ In our output file (extxyz format), the unit of `stress` is converted to GPa by 
 The "sample_debug.py" file extracts 100 materials (100 dictionary) from each pickle file to confirm debugging code (debug.py).  
 The sample number and output file name are optional.
 
+The "pkl_num_data.py" is not essential. This code is just utility file and it confirms the total number of atomic structure (snap shot) in data.  
+
 The codes in "for_nequip" directory are extract data for nequip 0.3.3 version.
 The nequip 0.3.3 version is limited the atom species, so we need to skip some data to use nequip.
 
