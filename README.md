@@ -14,6 +14,9 @@ In our output file (extxyz format), the unit of `stress` is converted to GPa by 
 The "sample_debug.py" file extracts 100 materials (100 dictionary) from each pickle file to confirm debugging code (debug.py).  
 The sample number and output file name are optional.
 
+The codes in "for_nequip" directory are extract data for nequip 0.3.3 version.
+The nequip 0.3.3 version is limited the atom species, so we need to skip some data to use nequip.
+
 ## Usage
 1. Install [pymatgen]([https://pytorch.org/get-started/locally/](https://pymatgen.org/installation.html)). This package is depended on
     - Python>=3.8
@@ -22,3 +25,11 @@ The sample number and output file name are optional.
 pip install pymatgen==2023.8.10
 ```
 2. Strongly recommanded pymatgen version 2023.8.10, the "pkl_to_extxyz.py" file doesn't work at 2024.8.9 version of pymatgen.
+3. Need to install [ASE](https://wiki.fysik.dtu.dk/ase/index.html), when you use the codes in "for_nequip" directory. The ASE requires to
+    - Python 3.9 or newer
+    - NumPy (base N-dimensional array package)
+    - SciPy (library for scientific computing)
+    - Matplotlib (plotting)
+```shell
+pip install --upgrade ase
+```
