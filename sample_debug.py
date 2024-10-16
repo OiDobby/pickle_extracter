@@ -3,32 +3,37 @@ import random
 
 # extract max_samples dictionary from both the block_0 and block_1
 max_samples = 100
-sampled_data = {}
+n_sample = 10
 
 # file names as inputs
 input1 = 'block_0.p'
 input2 = 'block_1.p'
-output = f"sampled_data_{input1.split('.')[0]}_{input2.split('.')[0]}.p"
+output_prefix = f"sampled_data_{input1.split('.')[0]}_{input2.split('.')[0]}"
 
-# sampling from block_0
+# Load data from Pickle files
 with open(input1, 'rb') as f:
-    block_0_data = pickle.load(f)
-    print(f"File {input1} loaded successfully.")
-    block_0_keys = random.sample(list(block_0_data.keys()), min(max_samples, len(block_0_data)))
-    sampled_data.update({k: block_0_data[k] for k in block_0_keys})
-    #sampled_data.update({k: block_0_data[k] for k in list(block_0_data.keys())[:max_samples]})
-
-# sampling from block_1
+    data = pickle.load(f)
+    print(f"{input1} is loaded")
 with open(input2, 'rb') as f:
-    block_1_data = pickle.load(f)
-    print(f"File {input2} loaded successfully.")
-    block_1_keys = random.sample(list(block_1_data.keys()), min(max_samples, len(block_1_data)))
-    sampled_data.update({k: block_1_data[k] for k in block_1_keys})
-    #sampled_data.update({k: block_1_data[k] for k in list(block_1_data.keys())[:max_samples]})
+    data.update(pickle.load(f))
+    print(f"{input2} is updated to data")
 
-# save in new Pickle file
-with open(output, 'wb') as f:
-    pickle.dump(sampled_data, f)
+# Collect all keys into a list
+all_keys = list(data.keys())
 
-print(f'Randomly sampled data saved to {output}')
-
+# Repeat sampling n times
+for i in range(n_sample):
+    # Randomly sample max_samples from all keys
+    sampled_keys = random.sample(all_keys, min(max_samples, len(all_keys)))
+    
+    # Create new data with the sampled entries
+    sampled_data = {k: data[k] for k in sampled_keys}
+    
+    # Generate output file name (save with different names for each repetition)
+    output_file = f"{output_prefix}_{i+1}.p"
+    
+    # Save the sampled data to a file
+    with open(output_file, 'wb') as f:
+        pickle.dump(sampled_data, f)
+    
+    print(f'Sampled data {i+1}/{n_sample} saved to {output_file}')
