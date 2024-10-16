@@ -17,7 +17,8 @@ The sample number and output file name are optional.
 The "pkl_num_data.py" is not essential. This code is just utility file and it confirms the total number of atomic structure (snap shot) in data.  
 
 The codes in "for_nequip" directory are extract data for nequip 0.3.3 version.  
-The nequip 0.3.3 version is limited the atom species, so we need to skip some data to use nequip.
+The nequip 0.3.3 version is limited the atom species, so we need to skip some data to use nequip.  
+Skiped materials and structures are recorded in "extraction.log" file.
 
 ## Usage
 1. Install [pymatgen]([https://pytorch.org/get-started/locally/](https://pymatgen.org/installation.html)). This package is depended on
