@@ -13,7 +13,7 @@ with open('block_1.p', 'rb') as f:
 #with open(input_file, 'rb') as f:
 #    data = pickle.load(f)
 
-# 전체 structure 수를 세는 함수
+# count structure number
 def count_structures(data):
     total_structures = 0
     for material_id, snapshots in data.items():
@@ -21,7 +21,7 @@ def count_structures(data):
         total_structures += structure_count
     return total_structures
 
-# 전체 structure 수 계산
+# calculate number all of the structures
 total_structure_count = count_structures(data)
 print(f"Total number of structures in block_0 and block_1: {total_structure_count}")
 
