@@ -19,7 +19,8 @@ The "pkl_num_data.py" is not essential. This code is just utility file and it co
 The code in "for_nequip" directory extracts data for nequip 0.3.3 version.  
 Some data are inappropriate for nequip, such as an excessively long distance between two atoms that exceeds r_max.  
 Skiped that structures are recorded in "neighbor_list_log.txt" file.  
-The code generates two files. The first (output_with_edges.extxyz) is compatible with nequip, whereas the second (output_no_edges.extxyz) is not.
+The code generates two files.  
+The first (output_with_edges.extxyz) is compatible with nequip, whereas the second (output_no_edges.extxyz) is not.
 
 ## Usage
 1. Install [pymatgen]([https://pytorch.org/get-started/locally/](https://pymatgen.org/installation.html)). This package is depended on
